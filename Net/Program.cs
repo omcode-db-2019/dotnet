@@ -41,12 +41,6 @@ namespace Net
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .ConfigureKestrel(opt =>
-                {
-                    opt.Listen(IPAddress.Parse("116.202.99.130"), 5000);
-                    opt.Listen(IPAddress.Parse("116.202.99.130"), 5001);
-                })
-                .UseUrls("http://116.202.99.130:5000", "https://116.202.99.130:5001", "http://hackathon.omcode.ru");
+                .UseStartup<Startup>();
     }
 }
