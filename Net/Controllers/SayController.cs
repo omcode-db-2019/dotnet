@@ -8,9 +8,9 @@ namespace Net.Controllers
     public class SayController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            return new string[] { "Hello, bitch" };
+            return "Hello, bitch";
         }
     }
 }
