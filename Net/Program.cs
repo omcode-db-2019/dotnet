@@ -28,7 +28,7 @@ namespace Net
                 var kernel = new StandardKernel();
                 kernel.Bind(x => x.FromThisAssembly().SelectAllClasses().InheritedFrom<IParser>().BindAllInterfaces());
                 kernel.Bind<Connect>().ToConstant(new Connect(connect)).InSingletonScope();
-                kernel.Bind<Timer>().ToConstant(new Timer(60 * 60 * 1000)).InSingletonScope();
+                kernel.Bind<Timer>().ToConstant(new Timer(60 * 60 * 1000));
                 kernel.Get<ParseRunner>().Run();
             }
             catch (Exception ex)
@@ -40,6 +40,7 @@ namespace Net
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
                 .UseStartup<Startup>();
     }
 }
