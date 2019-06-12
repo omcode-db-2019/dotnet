@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Ninject.Extensions.Conventions;
 using Ninject;
 using DotNet;
+using System.Net;
 
 namespace Net
 {
@@ -18,10 +19,10 @@ namespace Net
             {
                 string host = "localhost"; // Имя хоста
                 string database = "app"; // Имя базы данных
-                string user = "omcode"; // Имя пользователя
-                string password = "mRA3Vgf@kEKM&5yIn#gG"; // Пароль пользователя
-                //string user = "root"; // Имя пользователя
-                //string password = "root"; // Пароль пользователя
+                //string user = "omcode"; // Имя пользователя
+                //string password = "mRA3Vgf@kEKM&5yIn#gG"; // Пароль пользователя
+                string user = "root"; // Имя пользователя
+                string password = "root"; // Пароль пользователя
                 string ecoding = "utf8";
                 string connect = $"Database={database};Datasource={host};User={user};Password={password};Charset={ecoding}";
 
@@ -40,7 +41,7 @@ namespace Net
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseKestrel()
+                .UseKestrel(opt => opt.Listen(IPAddress.Parse("116.202.99.130"), 5001))
                 .UseStartup<Startup>();
     }
 }
