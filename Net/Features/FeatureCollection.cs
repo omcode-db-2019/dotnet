@@ -1,4 +1,4 @@
-﻿namespace dotnet
+﻿namespace DotNet
 {
     public class FeatureCollection
     {

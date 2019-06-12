@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Timers;
-using dotnet.Parsers;
+using DotNet.Parsers;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Ninject.Extensions.Conventions;
 using Ninject;
-using dotnet;
+using DotNet;
 
 namespace Net
 {

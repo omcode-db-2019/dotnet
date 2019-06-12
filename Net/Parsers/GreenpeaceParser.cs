@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Net;
 
-namespace dotnet.Parsers
+namespace DotNet.Parsers
 {
     public class GreenpeaceParser: IParser
     {

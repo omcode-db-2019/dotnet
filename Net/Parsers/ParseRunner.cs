@@ -2,7 +2,7 @@
 using System;
 using System.Timers;
 
-namespace dotnet.Parsers
+namespace DotNet.Parsers
 {
     public class ParseRunner
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dotnet.Parsers
+namespace DotNet.Parsers
 {
     public class Connect
     {

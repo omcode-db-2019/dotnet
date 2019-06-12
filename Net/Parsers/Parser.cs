@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace dotnet
+namespace DotNet
 {
     public interface IParser
     {
