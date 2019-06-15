@@ -31,13 +31,18 @@ namespace Net
                 app.UseDeveloperExceptionPage();
             else
                 app.UseHsts();
-            
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
             app.UseHttpsRedirection();
             app.UseMvc();
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Supported methods:\nsay");
             });
         }
     }

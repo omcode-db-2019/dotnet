@@ -40,7 +40,6 @@ namespace DotNet.Parsers
                             $" '{feature.Properties.Comments}');";
                         mysql_query.ExecuteNonQuery();
                     }
-                    break;
                 }
             }
             catch(Exception ex)
